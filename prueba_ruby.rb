@@ -48,6 +48,9 @@ end
 def photos_count(hash)
     nuevo_hash = {}
     contadores = []
+
+    camaras = ['FHAZ','RHAZ','MAST','CHEMCAM','MAHLI','MARDI','NAVCAM','PANCAM','MINITES']
+
     contador0 = 0
     contador1 = 0
     contador2 = 0
@@ -57,6 +60,7 @@ def photos_count(hash)
     contador6 = 0
     contador7 = 0
     contador8 = 0
+    
     hash.each do |k,v|
         v.each do |im|
             if im['camera']['name'] == 'FHAZ'
@@ -81,8 +85,6 @@ def photos_count(hash)
         end
         contadores.push(contador0,contador1,contador2,contador3,contador4,contador5,contador6,contador7,contador8)
     end
-    
-    camaras = ['FHAZ','RHAZ','MAST','CHEMCAM','MAHLI','MARDI','NAVCAM','PANCAM','MINITES']
     
     i = 0
     largo = camaras.count
